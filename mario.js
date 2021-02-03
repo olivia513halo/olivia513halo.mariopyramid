@@ -1,6 +1,6 @@
-printPyramid(5);
+printPyramid(10);
 // TODO #2
-// Take in user input for the height
+let height = prompt("Enter the height of the pyramid");
 
 
 /*
@@ -21,20 +21,22 @@ function printPyramid(height) {
     // TODO #1
     // print that pyramid!
   
-
-let rows = 5;
+let numBricks = 0;
+let numSpaces = 0;
 //start by declaring an empty string outside the loop
 let str = '';
 
 //you will need to use a for loop nested inside another for loop.
-for(let i=0; i<=rows; i++){  //outer loop
+for(let row = 0; row < height; row++){  //outer loop
   str = "";
-  for(let b=0; b<=i; b++){
-    str += " ";
-  }
-  for(let j=0; j<=(i+1); j++){//inner loop
-    str += "#"; //this adds a # to the end of the string.
+  numBricks = row + 1;
+  numSpaces = (height - row - 1);
 
+ for (let i = 0; i < numSpaces; i++){
+   str += " ";
+ }
+ for(j=0; j <= numBricks; j++){//inner loop
+    str += "#"; //this adds a # to the end of the string.
   }
   console.log(str); //once a row is done we print it out
 }  
