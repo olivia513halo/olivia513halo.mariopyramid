@@ -1,6 +1,6 @@
-printPyramid(10);
+printPyramid(5);
 // TODO #2
-let height = prompt("Enter the height of the pyramid");
+//let height = prompt("Enter the height of the pyramid");
 
 
 /*
@@ -15,29 +15,33 @@ let height = prompt("Enter the height of the pyramid");
  *      ######
  */
 function printPyramid(height) {
-    console.log("Uh oh... the pyramid is under construction.");
-    console.log("Check back soon, our developers are hard at work as we speak!");
 
-    // TODO #1
-    // print that pyramid!
   
 let numBricks = 0;
 let numSpaces = 0;
 //start by declaring an empty string outside the loop
 let str = '';
 
-//you will need to use a for loop nested inside another for loop.
 for(let row = 0; row < height; row++){  //outer loop
   str = "";
   numBricks = row + 1;
   numSpaces = (height - row - 1);
 
  for (let i = 0; i < numSpaces; i++){
-   str += " ";
+   str += ".";
  }
  for(j=0; j <= numBricks; j++){//inner loop
     str += "#"; //this adds a # to the end of the string.
   }
   console.log(str); //once a row is done we print it out
+  //create a paragraph element
+  let para = document.createElement("p"); 
+  //create text
+  let node = document.createTextNode(str);
+  //create a variable to refernce the div element
+  let element = document.getElementById("pyramid"); //add the text to the paragraph Element
+  para.appendChild(node); 
+  element.appendChild(para); 
 }  
+
 }
